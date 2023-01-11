@@ -1,0 +1,4 @@
+- name: "Install freeipmi"
+  package:
+    name: freeipmi
+    state: present

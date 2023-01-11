@@ -1,0 +1,10 @@
+{{ ansible_managed | comment }}
++ : root : LOCAL 172.24. 134.79.23.
++ : @sdf-admin : ALL
+{% if access_list is defined %}
+{% for item in access_list %}
++ : {{ item }} : ALL
+{% endfor %}
+{% endif %}
++ : telegraf : LOCAL
+- : ALL : ALL

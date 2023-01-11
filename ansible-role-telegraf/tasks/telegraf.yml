@@ -1,0 +1,21 @@
+---
+- name: Granting telegraf user sudo priviliges and local ssh access
+  block:
+    - name: Granting telegraf account sudo priviliges
+      ansible.builtin.template:
+        src: telegraf_sudoers.j2
+        dest: /etc/sudoers.d/telegraf
+        owner: root
+        group: root
+        mode: 0440
+        validate: /usr/sbin/visudo -csf %s
+    
+    - name: Adding telegraf user to access.conf file
+      ansible.builtin.template:
+        src: access.j2
+        dest: /etc/security/access.conf
+        owner: root
+        group: root
+        mode: 0644
+  notify:
+    - Restart Telegraf
