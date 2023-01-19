@@ -4,7 +4,7 @@ Added the following changes to the ansible-telegraf-role:
 
 +freeipmi.yml - Installs FREEIPMI package on Red Hat Linux distribution systems
 
-+main.yml - added Lines for executing freeipmi.yml and telegraf.yml playbook
++main.yml - added lines for executing freeipmi.yml and telegraf.yml playbook
 
 +telegraf.yml - granting telegraf user account sudo priviliges to execute commands in shell without password
 
